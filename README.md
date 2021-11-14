@@ -59,6 +59,8 @@ Sunday 14th November 9:15 am
 
 https://user-images.githubusercontent.com/91871416/141673292-db44976e-c282-4ce5-b196-d0d63d93a7e4.mp4
 
+In last week of second unit, we received a request from our company that consists of modifying the company's existing Apps for non-sighted users.
 
+ We started researching how Swift can obtain our voice and transcribe it into text and how we can make iPhones reproduce voice from the reading of text.
 
 
