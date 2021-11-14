@@ -56,5 +56,9 @@ We started researching how Swift can obtain our voice and transcribe it into tex
 ## Deadline 
 Sunday 14th November 9:15 am
 
+https://user-images.githubusercontent.com/90204829/141680493-99d9404a-5fb6-4799-9285-efab663ecc1b.mp4
 
+![AudioReproducerApp](https://user-images.githubusercontent.com/90204829/141680504-81d6c9ee-da80-4f64-a08d-e2666126036a.png)
+
+![AudioReproducerApp2](https://user-images.githubusercontent.com/90204829/141680548-49e52ecb-c370-4712-8f96-74a45e4b2f68.png)
 
