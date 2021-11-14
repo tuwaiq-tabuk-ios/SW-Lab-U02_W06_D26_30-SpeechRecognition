@@ -61,7 +61,7 @@ We started researching how Swift can obtain our voice and transcribe it into tex
 https://user-images.githubusercontent.com/90204829/141680493-99d9404a-5fb6-4799-9285-efab663ecc1b.mp4
 
 
-<img src="![AudioReproducerApp](https://user-images.githubusercontent.com/90204829/141680810-aa3b748f-d546-4b4e-95b4-a92ee1a1e93a.png)"  width="170" height="290">
+<img src="https://user-images.githubusercontent.com/90204829/141680810-aa3b748f-d546-4b4e-95b4-a92ee1a1e93a.png"  width="170" height="290">
 
 
-<img src="![AudioReproducerApp2](https://user-images.githubusercontent.com/90204829/141680832-4176ed5a-8a76-4540-b512-a200a3763b77.png)"  width="170" height="290">
+<img src="https://user-images.githubusercontent.com/90204829/141680832-4176ed5a-8a76-4540-b512-a200a3763b77.png"  width="170" height="290">
