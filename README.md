@@ -1,6 +1,15 @@
 # SW-Lab-U02_W06_D26_30-SpeechRecognition
 Recognize and transcript verbal commands. Convert text to spoken audio.
 
+### Screenshot 
+<div>
+   <img src="https://user-images.githubusercontent.com/91820775/141671834-e2537f2b-82ad-44e0-818a-b13b49fd50c5.png"  width="170" height="290">
+   <img src="https://user-images.githubusercontent.com/91820775/141671837-d12ae431-7ce2-4fb9-b7f2-c2a328610d1c.png"  width="170" height="290">
+   <img src="https://user-images.githubusercontent.com/91820775/141671838-5b494f51-f3d0-4c3f-9770-5b0bcd39d825.png"  width="170" height="290">
+</div>
+
+
+
 In last week of second unit, we received a request from our company that consists of modifying the company's existing Apps for non-sighted users.
 
 We started researching how Swift can obtain our voice and transcribe it into text and how we can make iPhones reproduce voice from the reading of text. 
