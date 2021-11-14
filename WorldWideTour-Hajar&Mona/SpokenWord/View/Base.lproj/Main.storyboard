@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnz-oc-D4v">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainNC-->
+        <scene sceneID="kHm-e0-wSg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hnz-oc-D4v" userLabel="MainNC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="center" largeTitles="YES" id="l4g-wF-T7L">
+                        <rect key="frame" x="0.0" y="24" width="834" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QWl-9t-MjZ" kind="relationship" relationship="rootViewController" id="1KG-xP-AvG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kml-eN-fVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2252" y="519"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="YaB-Wj-Zkw">
+            <objects>
+                <viewController id="QWl-9t-MjZ" userLabel="MainVC" customClass="MainViewController" customModule="SpokenWord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Doj-Zx-j50">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="mls-mp-vkU">
+                                <rect key="frame" x="0.0" y="126" width="834" height="1048"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="MAP" translatesAutoresizingMaskIntoConstraints="NO" id="ESw-Eb-E9b" userLabel="mapImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="959"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5B-9M-K4M">
+                                        <rect key="frame" x="0.0" y="988" width="834" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="oUq-Nd-Lge"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start Touring!">
+                                            <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="43"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startTourButtonPressed:" destination="QWl-9t-MjZ" eventType="touchUpInside" id="8I3-yK-ssI"/>
+                                            <segue destination="mN1-dk-gqo" kind="show" id="OmM-bz-Blf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g87-Z0-Mtb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mls-mp-vkU" secondAttribute="trailing" id="1Nw-X0-z6Q"/>
+                            <constraint firstItem="mls-mp-vkU" firstAttribute="leading" secondItem="g87-Z0-Mtb" secondAttribute="leading" id="CJa-WF-i2b"/>
+                            <constraint firstAttribute="bottom" secondItem="mls-mp-vkU" secondAttribute="bottom" constant="20" id="xHJ-Tg-zUR"/>
+                            <constraint firstItem="mls-mp-vkU" firstAttribute="top" secondItem="g87-Z0-Mtb" secondAttribute="top" id="yJn-gR-VgG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="World Wide Tour " largeTitleDisplayMode="always" id="eqp-fF-nYk">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1VA-EQ-CvB"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="startTourButton" destination="y5B-9M-K4M" id="XCZ-2Q-ZrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F74-La-X8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1529.4964028776978" y="518.5929648241206"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="SYw-dm-tRZ">
+            <objects>
+                <viewController id="mN1-dk-gqo" userLabel="MapVC" customClass="MapViewController" customModule="SpokenWord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9aU-K7-dey">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="G7m-ll-YWm">
+                                <rect key="frame" x="0.0" y="126" width="834" height="1028"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statue of Liberty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqG-lf-14K">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-88-M51">
+                                        <rect key="frame" x="0.0" y="43" width="834" height="794"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-qJ-Vdy">
+                                        <rect key="frame" x="0.0" y="844" width="834" height="184"/>
+                                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Record Here!">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="43"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="locationButtonPressed:" destination="mN1-dk-gqo" eventType="touchUpInside" id="GNJ-ng-BUW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="onM-wC-4xO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G7m-ll-YWm" firstAttribute="top" secondItem="onM-wC-4xO" secondAttribute="top" id="Mb7-CY-JRm"/>
+                            <constraint firstItem="G7m-ll-YWm" firstAttribute="trailing" secondItem="onM-wC-4xO" secondAttribute="trailing" id="Nim-rg-oLm"/>
+                            <constraint firstItem="G7m-ll-YWm" firstAttribute="leading" secondItem="onM-wC-4xO" secondAttribute="leading" id="Uhm-eG-QxK"/>
+                            <constraint firstItem="onM-wC-4xO" firstAttribute="bottom" secondItem="G7m-ll-YWm" secondAttribute="bottom" constant="20" id="znZ-Xs-syl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="World Wide Tour " largeTitleDisplayMode="always" id="roe-tk-YL7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1gt-Zs-4Ou"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="locationButton" destination="fTE-qJ-Vdy" id="oOj-Ob-W3p"/>
+                        <outlet property="mapView" destination="tNP-88-M51" id="bUo-Wd-XZ5"/>
+                        <outlet property="placeLabel" destination="GqG-lf-14K" id="TUl-C5-Z7U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouW-Nj-Ekk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794.24460431654677" y="518.5929648241206"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MAP" width="1748" height="1240"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
