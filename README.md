@@ -55,6 +55,8 @@ We started researching how Swift can obtain our voice and transcribe it into tex
 2. Presentation of the projects.
 ## Deadline 
 Sunday 14th November 9:15 am
+![Simulator Screen Shot - iPhone 12 - 2021-11-14 at 09 08 09](https://user-images.githubusercontent.com/91871608/141674004-9800da42-5803-486c-9f51-cee2b566fdcd.png)
+![Simulator Screen Shot - iPhone 12 - 2021-11-14 at 09 08 21](https://user-images.githubusercontent.com/91871608/141674008-900e0730-6a5e-4714-b1a9-258fbbda8d42.png)
 
 
 
