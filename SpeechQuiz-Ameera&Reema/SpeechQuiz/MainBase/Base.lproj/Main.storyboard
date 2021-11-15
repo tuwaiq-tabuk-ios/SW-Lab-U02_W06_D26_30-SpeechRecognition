@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ufk-sm-Iwe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="OMb-hw-5vc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ufk-sm-Iwe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEd-On-AcV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wPS-IE-TgU" kind="relationship" relationship="rootViewController" id="dYR-Xv-OI7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etq-b6-8gQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-955" y="-294"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lbt-Pp-bKI">
+            <objects>
+                <viewController id="wPS-IE-TgU" customClass="ViewController" customModule="SpeechQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4fL-eh-Eyx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5Q-iI-uEV">
+                                <rect key="frame" x="0.0" y="488" width="414" height="408"/>
+                                <color key="backgroundColor" red="0.78820567689999999" green="0.79382569039999995" blue="0.81068573089999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.78820567689999999" green="0.79382569039999995" blue="0.81068573089999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="speechButtonPressed:" destination="wPS-IE-TgU" eventType="touchUpInside" id="R55-ck-JQp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B01-sG-zMk">
+                                <rect key="frame" x="10" y="88" width="394" height="257"/>
+                                <color key="textColor" red="0.5986213212" green="0.44059806280000002" blue="0.59512191489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz for the capitals of world" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="339-c6-Zrw">
+                                <rect key="frame" x="0.0" y="355" width="414" height="123"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                                <color key="textColor" red="0.3351829885" green="0.17698215270000001" blue="0.44348116780000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xp2-u9-YIC"/>
+                        <color key="backgroundColor" red="0.78820567691391275" green="0.79382569042137863" blue="0.81068573094377616" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="P5Q-iI-uEV" firstAttribute="top" secondItem="xp2-u9-YIC" secondAttribute="top" constant="400" id="8B1-HV-S4h"/>
+                            <constraint firstItem="P5Q-iI-uEV" firstAttribute="top" secondItem="B01-sG-zMk" secondAttribute="bottom" constant="143" id="B8p-46-zrB"/>
+                            <constraint firstItem="B01-sG-zMk" firstAttribute="centerX" secondItem="4fL-eh-Eyx" secondAttribute="centerX" id="DgS-UA-vZi"/>
+                            <constraint firstItem="B01-sG-zMk" firstAttribute="leading" secondItem="4fL-eh-Eyx" secondAttribute="leadingMargin" constant="-10" id="FYW-R3-xCh"/>
+                            <constraint firstItem="xp2-u9-YIC" firstAttribute="trailing" secondItem="339-c6-Zrw" secondAttribute="trailing" id="NwQ-h4-Nbj"/>
+                            <constraint firstItem="B01-sG-zMk" firstAttribute="top" secondItem="xp2-u9-YIC" secondAttribute="top" id="Plz-Wi-oGa"/>
+                            <constraint firstItem="xp2-u9-YIC" firstAttribute="trailing" secondItem="P5Q-iI-uEV" secondAttribute="trailing" id="YD3-16-GF4"/>
+                            <constraint firstItem="P5Q-iI-uEV" firstAttribute="leading" secondItem="xp2-u9-YIC" secondAttribute="leading" id="gNK-qv-sBa"/>
+                            <constraint firstAttribute="bottom" secondItem="P5Q-iI-uEV" secondAttribute="bottom" id="h3Q-8o-9Hd"/>
+                            <constraint firstItem="339-c6-Zrw" firstAttribute="top" secondItem="B01-sG-zMk" secondAttribute="bottom" constant="10" id="m5f-Ah-4qf"/>
+                            <constraint firstItem="P5Q-iI-uEV" firstAttribute="top" secondItem="339-c6-Zrw" secondAttribute="bottom" constant="10" id="pBh-aH-PgR"/>
+                            <constraint firstItem="xp2-u9-YIC" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P5Q-iI-uEV" secondAttribute="trailing" symbolic="YES" id="vd5-H9-xNj"/>
+                            <constraint firstItem="339-c6-Zrw" firstAttribute="leading" secondItem="xp2-u9-YIC" secondAttribute="leading" id="wyG-rW-DEw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dun-mo-dsX"/>
+                    <connections>
+                        <outlet property="speechButton" destination="P5Q-iI-uEV" id="S5s-Fk-b71"/>
+                        <outlet property="textView" destination="B01-sG-zMk" id="cxb-Id-Kfe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xrs-rr-ycv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.130434782608695" y="-295.3125"/>
+        </scene>
+    </scenes>
+</document>
