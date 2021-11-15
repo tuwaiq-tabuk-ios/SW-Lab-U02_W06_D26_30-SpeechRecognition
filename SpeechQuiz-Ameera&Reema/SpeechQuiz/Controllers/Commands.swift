@@ -1,10 +1,4 @@
-//
-//  Commands.swift
-//  SpokenWord
-//
-//  Created by Marzouq Almukhlif on 04/04/1443 AH.
-//  Copyright © 1443 Apple. All rights reserved.
-//
+
 
 import Foundation
 import Speech
@@ -12,7 +6,7 @@ import Speech
 struct Commands {
   
   let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
-
+  var player: AVAudioPlayer?
   
   func talkToUser(_ text:String , _ local:String){
     let utterance = AVSpeechUtterance(string: text)
@@ -38,4 +32,4 @@ struct Commands {
       synthesizer.speak(utterance)
       }
     }
-  }
+}

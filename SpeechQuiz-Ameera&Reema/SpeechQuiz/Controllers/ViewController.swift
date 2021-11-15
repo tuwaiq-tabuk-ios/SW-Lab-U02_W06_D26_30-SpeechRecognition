@@ -31,15 +31,12 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     super.viewDidLoad()
    
     WelcomeSentence().talkToUserQuestions()
-    speechButton.isEnabled = false
     
   }
   
   public override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    speechRecognizer.delegate = self
-    
+        
     SFSpeechRecognizer.requestAuthorization{  requestStatus in
       OperationQueue.main.addOperation {
         switch requestStatus  {
@@ -87,53 +84,20 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     
 recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
-  var isFinal = false
-  isFinal = false
- if let result = result {
-   self.textView.text = result.bestTranscription.formattedString
-    isFinal = result.isFinal
-    
-   let word = result.bestTranscription.formattedString
-     self.fullMessageString = word
-     self.textView.text = word
-        
- let lastWord = self.fullMessageString.replacingOccurrences(of: self.singleMessageString, with: "")
   
-   if self.isSetName == false {
+    var isFinal = false
+    isFinal = false
+    if let result = result {
+      self.singleMessageString = self.fullMessageString
+      isFinal = result.isFinal
+      let word = result.bestTranscription.formattedString
 
-          if(lastWord.contains("Start") || lastWord.contains("start")){
-
-            self.textView.text = word
-
-            if (self.name != "NULL" && self.name != "") {
-
-              self.textView.text = " \(self.name)"
-             Commands().textTalk("Start \(self.name)", "en-GB")
-            } else {
-              self.textView.text = ""
-              Commands().textTalk("Ok let's start say first question","en-GB")
-              DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                self.isSetName = true
-           }
-        }
-      }
-   }
-   
-   
-if (lastWord.contains("first") || lastWord.contains("First")) {
-  Commands().textTalk("What is the capital of Saudi Arabia?","en-US")}
-
-if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
-  Commands().textTalk("correct you are amazing \(self.playSound(soundName: "clap",audioStretch: "wav"))) /n say second ","en-US") }
-
- if (lastWord.contains("second") || lastWord.contains("Second")) {
-    Commands().textTalk("What is the capital of the Emirates?","en-US") }
-
- if (lastWord.contains("beirut") || lastWord.contains("Beirut")) {
-   Commands().textTalk("incorrect answer \(self.playSound(soundName: "fail", audioStretch: "mp3"))","en-US") }
-  
-     }
+      self.fullMessageString = word
+      self.textView.text = word
       
+//      let lastWord = self.fullMessageString.replacingOccurrences(of: self.singleMessageString, with: "")
+   }
+ 
       if isFinal {
         self.audioEngine.stop()
         inputNode.removeTap(onBus: 0)
@@ -143,9 +107,9 @@ if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
 
         self.speechButton.isEnabled = true
         self.speechButton.setTitle("Start Recording", for: [])
-      } else
-      if error == nil || isFinal{
-
+      } else if error == nil {
+        self.stopRecording()
+        
       }
     }
     
@@ -161,7 +125,7 @@ if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
   }
   
   
-    //  MARK - action speech button
+    //  MARK: - action speech button
   @IBAction func speechButtonPressed(_ sender: UIButton) {
     if audioEngine.isRunning {
       audioEngine.stop()
@@ -178,20 +142,81 @@ if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
     }
   }
   
+  
+  func commandCall() {
+   
+    let lastWord = fullMessageString
+    if(lastWord.contains("Start") || lastWord.contains("start")){
+      
+      self.textView.text = fullMessageString
+      
+      if (self.name != "NULL" && self.name != "") {
+        
+        self.textView.text = " \(self.name)"
+        Commands().textTalk("Start \(self.name)", "en-GB")
+      }
+      else {
+        self.textView.text = ""
+    Commands().textTalk("Ok let's start say first question","en-GB")
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+          self.isSetName = true
+        }
+      }
+    }
+    
+  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+   if (lastWord.contains("first") || lastWord.contains("First")) {
+    Commands().textTalk("What is the capital of Saudi Arabia? Riyadh or Cairo ","en-US")}
+    }
+    
+  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+    if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
+         Commands().textTalk("correct you are amazing \(self.playSound(soundName: "clap",audioStretch: "wav"))) /n say second question ","en-US") }
+     }
+    
+  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+    if (lastWord.contains("second") || lastWord.contains("Second")) {
+           Commands().textTalk("What is the capital of the Emirates? Abu Dhabi or Beirut","en-US") }
+      }
+    
+  DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+    if (lastWord.contains("beirut") || lastWord.contains("Beirut")) {
+     Commands().textTalk("incorrect answer \(self.playSound(soundName: "fail", audioStretch: "mp3"))  say Third questin","en-US") }
+     }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+      if (lastWord.contains("third") || lastWord.contains("Third")) {
+             Commands().textTalk("What Is The Capital Of Egypt? Beirut or Cairo","en-US") }
+        }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+      if (lastWord.contains("cairo") || lastWord.contains("Cairo")) {
+       Commands().textTalk("correct you are amazing \(self.playSound(soundName: "clap",audioStretch: "wav")))","en-US") }
+       }
+  }
 
   func stopRecording() {
     timer?.invalidate()
-    timer = Timer.scheduledTimer(withTimeInterval: 6.5, repeats: false, block: { (timer) in
-      })
+    timer = Timer.scheduledTimer(withTimeInterval: 1.0,
+                                 repeats: false,
+                                 block: { (timer) in
+      self.audioEngine.stop()
+      self.audioEngine.inputNode.removeTap(onBus: 0)
+
+      self.recognitionRequest = nil
+      self.recognitionTask = nil
+
+      self.speechButton.isEnabled = true
+      self.speechButton.setTitle("Start Recording", for: [])
+      
+      self.commandCall()
+    })
    }
   
-  
-  // MARK - the sound function
-  func playSound(soundName: String ,audioStretch: String) {
+  // MARK: - the sound function
+ func playSound(soundName: String ,audioStretch: String) {
     guard let url = Bundle.main.url(forResource: soundName , withExtension: audioStretch)
-    else { return
-      
-    }
+    else { return  }
     do {
       try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
       try AVAudioSession.sharedInstance().setActive(true)
@@ -207,5 +232,4 @@ if (lastWord.contains("riyadh") || lastWord.contains("Riyadh")) {
       print("ERROR: The audio does not work.\n \(error.localizedDescription)")
     }
   }
- }
-
+}
